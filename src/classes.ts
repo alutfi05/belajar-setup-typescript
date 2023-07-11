@@ -67,3 +67,8 @@ console.log(laila.getCourseCount);
 
 laila.courseCount = 10;
 console.log(laila.getCourseCount);
+
+const emma = new SubUser('emma@gmail.com', 'emma', 'userABC');
+emma.changeCourseCount();
+
+console.log(emma.getCourseCount);

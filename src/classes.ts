@@ -1,3 +1,8 @@
+// Access modifier
+// public -> can access in the class, inheritance and object
+// protected -> can access in the class and inheritance
+// private -> only can access in the class
+
 class User {
     public email: string;
     name: string; // default is public
@@ -12,7 +17,7 @@ class User {
 
 // another option
 class User2 {
-    private _courseCount = 1;
+    protected _courseCount = 1;
     readonly city: string = 'Depok';
 
     constructor(
@@ -41,6 +46,14 @@ class User2 {
         }
 
         this._courseCount += courseNumber;
+    }
+}
+
+class SubUser extends User2 {
+    isFamily: boolean = true;
+
+    changeCourseCount() {
+        this._courseCount = 4;
     }
 }
 

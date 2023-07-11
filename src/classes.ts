@@ -49,3 +49,8 @@ const lutfi = new User('lutfi@gmail.com', 'lutfi');
 // lutfi.city; // error
 
 const laila = new User2('laila@gmail.com', 'laila', 'userXYZ');
+console.log(laila.getAppleEmail);
+console.log(laila.getCourseCount);
+
+laila.courseCount = 10;
+console.log(laila.getCourseCount);

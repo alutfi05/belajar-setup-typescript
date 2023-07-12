@@ -64,3 +64,39 @@ const date = new Date();
 
 logValue(date);
 logValue('hello');
+
+type Fish = {
+    swim: () => void;
+};
+
+type Bird = {
+    fly: () => void;
+};
+
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined;
+}
+
+function getFood(pet: Fish | Bird) {
+    if (isFish(pet)) {
+        pet;
+        return 'Fish food';
+    } else {
+        pet;
+        return 'Bird food';
+    }
+}
+
+const shark: Fish = {
+    swim() {},
+};
+
+const eagle: Bird = {
+    fly() {},
+};
+
+console.log(isFish(shark));
+console.log(getFood(shark));
+
+console.log(isFish(eagle));
+console.log(getFood(eagle));

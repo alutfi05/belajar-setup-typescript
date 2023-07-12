@@ -43,3 +43,24 @@ function isAdminAccount(account: User | Admin) {
         return account.isAdmin;
     }
 }
+
+const ahmadLutfi: Admin = {
+    name: 'Ahmad Lutfi Rizki Patria',
+    email: 'lutfi@gmail.com',
+    isAdmin: true,
+};
+
+console.log(isAdminAccount(ahmadLutfi));
+
+function logValue(value: Date | string) {
+    if (value instanceof Date) {
+        console.log(value.toUTCString());
+    } else {
+        console.log(value.toUpperCase());
+    }
+}
+
+const date = new Date();
+
+logValue(date);
+logValue('hello');

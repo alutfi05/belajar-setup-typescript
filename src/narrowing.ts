@@ -100,3 +100,69 @@ console.log(getFood(shark));
 
 console.log(isFish(eagle));
 console.log(getFood(eagle));
+
+interface Circle {
+    kind: 'circle';
+    raduis: number;
+}
+
+interface Square {
+    kind: 'square';
+    side: number;
+}
+
+interface Rectangle {
+    kind: 'rectangle';
+    length: number;
+    width: number;
+}
+
+type Shape = Circle | Square | Rectangle;
+
+function getShape(shape: Shape) {
+    if (shape.kind === 'circle') {
+        return Math.PI * shape.raduis ** 2;
+    } else if (shape.kind === 'square') {
+        return shape.side * shape.side;
+    } else {
+        return shape.length * shape.width;
+    }
+}
+
+function getArea(shape: Shape) {
+    switch (shape.kind) {
+        case 'circle':
+            return `Area is ${Math.PI * shape.raduis ** 2}`;
+        case 'square':
+            return `Area is ${shape.side * shape.side}`;
+        case 'rectangle':
+            return `Area is ${shape.length * shape.width}`;
+        default:
+            const _defaultForShape: never = shape;
+            return _defaultForShape;
+    }
+}
+
+const ball: Circle = {
+    kind: 'circle',
+    raduis: 2,
+};
+
+const floor: Square = {
+    kind: 'square',
+    side: 5,
+};
+
+const wall: Rectangle = {
+    kind: 'rectangle',
+    length: 2,
+    width: 3,
+};
+
+console.log(getShape(ball));
+console.log(getShape(floor));
+console.log(getShape(wall));
+
+console.log(getArea(ball));
+console.log(getArea(floor));
+console.log(getArea(wall));

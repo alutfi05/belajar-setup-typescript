@@ -27,3 +27,23 @@ interface Bottle {
 }
 
 console.log(identityFour<Bottle>({ brand: 'Coca - Cola', type: 3 }));
+
+// Generics with array
+function getSearchProducts<T>(products: T[]): T {
+    // do some database operations
+    const myIndex = 3;
+    return products[myIndex];
+}
+
+const getMoreSearchProducts = <T>(products: T[]): T => {
+    // do some database operations
+    const myIndex = 5;
+    return products[myIndex];
+};
+
+// Common Generics in JSX
+// const getMoreSearchProducts = <T,>(products: T[]): T => {
+//     // do some database operations
+//     const myIndex = 5;
+//     return products[myIndex];
+// };

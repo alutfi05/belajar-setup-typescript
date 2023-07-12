@@ -47,3 +47,43 @@ const getMoreSearchProducts = <T>(products: T[]): T => {
 //     const myIndex = 5;
 //     return products[myIndex];
 // };
+
+interface Database {
+    connection: string;
+    username: string;
+    password: string;
+}
+
+function anotherFunction<T, U extends Database>(
+    valueOne: T,
+    valueTwo: U
+): object {
+    return { valueOne, valueTwo };
+}
+
+console.log(
+    anotherFunction(3, {
+        connection: 'mongoDB',
+        username: 'lutfidb',
+        password: 'pw123',
+    })
+);
+
+interface Quiz {
+    name: string;
+    type: string;
+}
+
+interface Course {
+    name: string;
+    author: string;
+    subject: string;
+}
+
+class Sellable<T> {
+    public cart: T[] = [];
+
+    addToCart(product: T) {
+        this.cart.push(product);
+    }
+}
